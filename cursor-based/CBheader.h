@@ -20,5 +20,7 @@ void insertRear(VSpace *vs, List *list, int item);
 void insertSorted(VSpace *vs, List *list, int item);
 int allocSpace(VSpace *vs);
 void display(VSpace vs, List list);
+void insertAt(VSpace *vs, List *list, int item, int pos);
+void freeSpace(VSpace *vs, List *list, int pos);
 
 #endif // !CBHEADER
