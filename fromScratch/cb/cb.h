@@ -21,5 +21,6 @@ void insertAt(VSpace *vs, List *head, int item, int idx);
 int allocSpace(VSpace *vs);
 void display(VSpace vs, List head);
 void insertSort(VSpace *vs, List *head, int item);
+void freeSpace(VSpace *vs, List *head, int pos);
 
 #endif

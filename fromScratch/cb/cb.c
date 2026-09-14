@@ -71,6 +71,25 @@ void insertSort(VSpace *vs, List *head, int item){
   }
 }
 
+void freeSpace(VSpace *vs, List *head, int pos){
+  if(*head == -1){
+    return;
+  }
+  List trav = *head;
+  for(;trav != -1 && pos > 1; --pos, trav = vs->space[trav].next){}
+  if(pos == 1){
+    int freed = vs->space[trav].next;
+    vs->space[trav].next = vs->space[freed].next;
+    vs->space[freed].next = vs->avail;
+    vs->avail = freed;
+  } else {
+    int freed = *head;
+    *head = vs->space[*head].next;
+    vs->space[freed].next = vs->avail;
+    vs->avail = freed;
+  }
+}
+
 
 
 

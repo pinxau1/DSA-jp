@@ -11,4 +11,6 @@ int main(){
   insertAt(&vs, &head, 555, 1);
   insertSort(&vs, &head, 21);
   display(vs, head);
+  freeSpace(&vs, &head, 4);
+  display(vs, head);
 }
