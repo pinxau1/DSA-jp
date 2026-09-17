@@ -71,11 +71,20 @@ int main() {
 }
 
 boolean isEqualNotSorted(List A, List B) {
-  int stow[100] {0};
+  int stow[100] = {0};
      
   for(;A; A = A->next){
     stow[A->data]++;
   }
+
+  for(;B;B = B->next){
+    if(stow[B->data] == 0){
+      return FALSE;
+    } else {
+      stow[B->data]--;
+    }
+  }
+  return TRUE;
 }
 
 boolean isEqualSorted(List A, List B) {
